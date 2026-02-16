@@ -2,12 +2,13 @@ import axios from "axios";
 
 export default function Wallets_Manage(state , action){
     const {Collected , SET_Collected , 
-       Xtoken ,USER , SET_show , SET_Value , SET_USER ,
-         SET_Func , SET_Head , URL , setisLoading , setOpen ,
-         GetWallets ,
-          setMSG} = state
-          let z = 0
-          let config = { headers: { Authorization: `Bearer ${Xtoken}` } }
+           Xtoken ,USER , SET_show , SET_Value , SET_USER ,
+           SET_Func , SET_Head , URL , setisLoading , setOpen ,
+           GetWallets , setMSG , z, setZ} = state
+
+
+
+    let config = { headers: { Authorization: `Bearer ${Xtoken}` } }
 
 switch(action){
 
@@ -32,7 +33,8 @@ return state
 
 
 case("Go_new"):
-if(z === 0){
+
+ if(z !== 0){GetWallets(); return state;}
 setisLoading(true)
 let data = {
 title : Collected.WName , 
@@ -41,6 +43,7 @@ goal : Number(Collected.WTarget)
 SET_show(false);
 axios.post(URL + "/create-wallet" , data , config)
 .then((Res)=>{ 
+  setZ(1)
     setisLoading(false) ;
     setMSG(Res.data.msg);
     setOpen(true);
@@ -48,9 +51,8 @@ axios.post(URL + "/create-wallet" , data , config)
 })
 .catch((err)=>{setisLoading(false);setMSG(err.response.data.msg) ; setOpen(true);})
 
-z++;
-}else{GetWallets()}
 return state
+
 
 case("join"):
 SET_Head("Join The Wallet Wallet") ;

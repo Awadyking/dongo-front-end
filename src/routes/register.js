@@ -47,7 +47,7 @@ let config = {
 setisLoading(true)
     axios.post(URL + "/register" , Form , config)
     .then((Res)=>{setisLoading(false); setMSG(Res.data.msg) ; setOpen(true) ; setLog(true)})
-    .catch((err)=>{setisLoading(false) ;setMSG(err.response.data.msg) ; setOpen(true);})
+    .catch((err)=>{console.log(err);setisLoading(false) ;setMSG(err.response.data.msg) ; setOpen(true);})
 }
     }
 

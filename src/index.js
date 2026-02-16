@@ -13,8 +13,7 @@ import { MainProvider } from "./logic/MainContext"
 import Profile from './routes/Profile';
 import MyWallets from "./routes/MyWallets"
 import Wallet from './routes/Wallet';
-import MyCards from './routes/MyCards';
-import SecParty from './routes/SecParty';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,10 +27,9 @@ root.render(
                     <Route path='/mywallets' element={<MyWallets />} ></Route>
                     <Route path='/mywallets/:WID' element={<Wallet/>} ></Route>
                     <Route path='/home' element={<Home/>}></Route>
+                    <Route path='/' element={<Home/>}></Route>
                     <Route path='/login' element={<Login/>}></Route>
                     <Route path="/register" element={<Register/>}></Route>
-                    <Route path="/cards" element={<MyCards/>} ></Route>
-                    <Route path="/second-party" element={<SecParty/>}></Route>
                     <Route path="*" element={<E404/>}></Route>
               </Routes>
               <SideBar />

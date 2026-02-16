@@ -6,10 +6,6 @@ export default function Wdetails({wa , func , btn}){
 
 const data = [
     ["Total" , wa.amount],
-    ["Total in Cards" , wa.amount - wa.cash] ,
-    ["Cash Total" , wa.cash] , 
-    ["Depts" , wa.dept] , 
-    ["Condemnation" , 0 - wa.for] , 
     ["Target" , wa.goal]
 ]
 
@@ -22,7 +18,7 @@ return(
             <div className="w-20 h-8 border-b-2 border-b-black bg-white bg-opacity-35 pl-1 font-bold text-lg text-yellow-700">{item[1]}</div>
         </div>
     })}
-<div className="flex justify-center items-center w-full mt-4">
+<div className="flex justify-evenly items-center w-full mt-4">
 <Button variant="contained" size="large" onClick={func} disabled ={btn}>+ New</Button>
 </div>
 </div>

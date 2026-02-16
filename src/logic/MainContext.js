@@ -7,7 +7,7 @@ function MainProvider({children}){
 const [storage_token , SET_storage_token ] = useState(localStorage.getItem("token") ?? "")
 // eslint-disable-next-line
 const [normal_token , SET_normal_token ] = useState(localStorage.getItem("Ntoken") ?? "")
-const URL = "http://local.dongo-api.js/"
+const URL = "http://127.0.0.1:8000"
 const Expire = localStorage.getItem("Expired") ?? ""
 // eslint-disable-next-line
 const [USER , SET_USER ] = useState(JSON.parse(localStorage.getItem("user")) ?? "")

@@ -27,9 +27,6 @@ const [Wallet , setWallet] = useState({
   "proc": [],
   "users": [],
   "amount": 0,
-  "dept": 0,
-  "for": 0,
-  "cash": 0,
   "goal": 0
 })
 

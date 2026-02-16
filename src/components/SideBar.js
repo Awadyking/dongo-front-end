@@ -8,8 +8,6 @@ function SideBar(){
 let El = [
     ["My Profile" , "/profile"],
     ["My Wallets" , "/mywallets"],
-    ["My Cards" , "/cards"],
-    ["Second Party", "/second-party"],
 ] 
 
 let ShowEl = El.map((i , id)=>{

@@ -28,6 +28,7 @@ export default function MyWallets(){
     const [open, setOpen] = useState(false); 
     const [data , setData] = useState([])
     const [Collected , SET_Collected] = useState({})
+    const [z , setZ] = useState(0)
     
     function GetWallets(){
     setisLoading(true)
@@ -46,7 +47,7 @@ export default function MyWallets(){
 // eslint-disable-next-line
 const [state , dispatch ] = useReducer(Wallets_Manage , {Collected , SET_Collected ,
    Xtoken , SET_USER, USER , SET_show , SET_Value , SET_Func , SET_Head ,setData ,URL ,
-    setisLoading , setOpen , setMSG , GetWallets})   
+    setisLoading , setOpen , setMSG , GetWallets , z ,setZ })   
 
 
 
